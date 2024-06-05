@@ -1,0 +1,17 @@
+int findFloor(vector<long long> v, long long n, long long x){
+    int s = 0;
+    int e = n - 1;
+    int ans = -1;
+
+    while(s <= e) {
+        int mid = s + (e - s) / 2;
+
+        if(v[mid] <= x) {  // Corrected the condition
+            ans = mid;  // This could be the floor
+            s = mid + 1;  // Look for a closer value to x on the right
+        } else {
+            e = mid - 1;
+        }
+    }
+    return ans;
+}
