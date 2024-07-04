@@ -17,4 +17,4 @@ string removeOuterParentheses(string s) {
           }
        }
        return ans;
-    }
+ }
