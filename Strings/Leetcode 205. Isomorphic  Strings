@@ -1,0 +1,14 @@
+bool isIsomorphic(string s, string t) {
+    if (s.length() != t.length()) return false;
+    unordered_map<char, char> mapST, mapTS;
+    for (int i = 0; i < s.length(); ++i) {
+        char ss = s[i];
+        char tt = t[i];
+        if ((mapST.count(ss) && mapST[ss] != tt) || (mapTS.count(tt) && mapTS[tt] != ss)) {
+            return false;
+        }
+        mapST[ss] = tt;
+        mapTS[tt] = ss;
+    }
+    return true;
+    }
